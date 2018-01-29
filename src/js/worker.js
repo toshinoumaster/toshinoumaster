@@ -2,6 +2,7 @@
 Created by Freshek on 07.10.2017
 */
 window.globalSettings = new GlobalSettings();
+window.debug = false;
 var api;
 
 $(document).ready(function() {
@@ -47,6 +48,7 @@ $(document).ready(function() {
   hm.registerCommand(MessagesHandler.ID, new MessagesHandler());
   hm.registerCommand(HeroDiedHandler.ID, new HeroDiedHandler());
   hm.registerCommand(HeroUpdateHitpointsHandler.ID, new HeroUpdateHitpointsHandler());
+  hm.registerCommand(AssetCreatedHandler.ID, new AssetCreatedHandler());
 
   hm.registerEvent("updateHeroPos", new HeroPositionUpdateEventHandler());
   hm.registerEvent("movementDone", new MovementDoneEventHandler());

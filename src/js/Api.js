@@ -7,6 +7,7 @@ class Api {
     this.gates = [];
     this.boxes = {};
     this.ships = {};
+    this.battlestation = null; // let's consider that there isn't more than 1 cbs/map
     this.lastMovement = 0;
     this.isDisconected = false;
   }
