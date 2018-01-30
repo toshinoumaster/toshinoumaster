@@ -40,6 +40,8 @@
         "js/objects/Hero.js",
         "js/objects/Ship.js",
         "js/objects/Gate.js",
+        "js/objects/CBS/Battlestation.js",
+        "js/objects/CBS/BattlestationModule.js",
         "js/handlers/HandlersManager.js",
         "js/handlers/events/MovementDoneEventHandler.js",
         "js/handlers/events/HeroPositionUpdateEventHandler.js",

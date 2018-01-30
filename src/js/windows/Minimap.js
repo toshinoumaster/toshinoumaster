@@ -32,6 +32,7 @@ class Minimap {
 
   draw() {
     var ct = this.ctx;
+    ct.font = "9px Arial";
 
     ct.clearRect(0, 0, this.canvas.width() + 40, this.canvas.height() + 40);
 
@@ -67,6 +68,23 @@ class Minimap {
       }
 
       this._fillCircle(ct, pos.x / 70, pos.y / 90, 2);
+    }
+
+    if (this._api.battlestation) {
+      let bs = this._api.battlestation;
+
+      if (bs.factionId != window.hero.factionId && bs.factionId != 0)
+        ct.fillStyle = "rgb(255, 0, 0)";
+      else if (bs.factionId == 0)
+        ct.fillStyle = "rgb(76, 76, 76)";
+
+      this._fillCircle(ct, bs.position.x / 70 - 1.5, bs.position.y / 70 - 1.5, 3);
+      ct.fillText(bs.name, bs.position.x / 70 + 1, bs.position.y / 70 + 13);
+
+      for (let prop in this._api.battlestation.modules) {
+        let mod = this._api.battlestation.modules[prop];
+        this._fillCircle(ct, mod.position.x / 70 - 1, mod.position.y / 70 - 1, 2);
+      }
     }
 
     ct.strokeStyle = "white";

@@ -63,4 +63,12 @@ class Variables {
   static get selectHp() {
     return "_-T2B";
   }
+
+  static get assetCreateX() {
+    return "_-a2Y";
+  }
+
+  static get assetCreateY() {
+    return "_-H2i";
+  }
 }
